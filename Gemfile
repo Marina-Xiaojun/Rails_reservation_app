@@ -44,7 +44,7 @@ group :development, :test do
   gem "brakeman", require: false
   gem "fiddle"
   gem "minitest", "~> 5.20"
-  
+
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
   gem "erb_lint"
