@@ -13,3 +13,621 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+ header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgb(36, 36, 86);
+}
+
+
+
+header h1 {
+  font-size: 20px;
+  color: white;
+  margin: 0;
+   color: white;
+  text-decoration: none;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+ }
+
+ header nav a {
+ color: white;
+ }
+
+.signup-button {
+  padding: 8px 15px;
+  border: 1px solid orange;
+  background-color: orange;
+  border-radius: 4px;
+}
+
+
+/* ページの高さ足りないとき */
+.main-image {
+position: relative;
+ width: 100%;
+  height: 450px;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px);
+}
+
+.main-image h1 {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(225, 236, 109);
+  font-size: 50px;
+}
+
+.main-image .search {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+
+.areas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.search form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+
+.search input {
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.search form input[type="submit"] {
+  width: 300px;
+  padding: 10px;
+  box-sizing: border-box;
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+.areas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 200px;
+}
+
+.area {
+  position: relative;
+}
+
+.areas img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.areas p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  margin: 0;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 70px;
+  
+}
+
+/* 新規登録画面 */
+
+.signup-box {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgb(151, 171, 166);
+  box-sizing: border-box;
+}
+
+.signup-box h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.signup-box .field {
+  margin-bottom: 20px;
+}
+
+.signup-box .field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.signup-box .field input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.password-note {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.signup-box .error-message {
+  margin: 5px 0;
+}
+
+.signup-box .actions {
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.signup-box .actions input {
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.signup-box .login-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+}
+
+
+/* 新しいアカウントを作成 */
+.actions input {
+  background-color: orange;
+  color: white;
+}
+
+/* アカウントをお持ちの方はログイン */
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #70acd4;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* エラーメッセージ */
+.error-message {
+  color: red;
+}
+
+/* ログイン画面 */
+.login_box {
+  width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: rgb(128, 174, 215);
+  box-sizing: border-box;
+}
+
+.login_box .actions {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 新しいアカウントを作成　色合い変更 */
+.login-button {
+background-color: rgb(193, 211, 170);
+}
+
+/*  エリア検索後の画面 */
+.room-search {
+  margin: 30px auto;
+  width: 600px;
+}
+
+.room-search form {
+  display: flex;
+  gap: 10px;
+}
+
+.room-search input {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.room-search input[type="text"] {
+  width: 250px;
+}
+
+.room-search input[type="submit"] {
+  padding: 10px 20px;
+  background-color: rgb(176, 173, 173);
+  color: white;
+  border: none;
+}
+
+/*  ホテルの画像 */
+.room-card {
+  width: 30%;
+  padding: 15px;
+  background-color: white;
+  box-sizing: border-box;
+  background-color:skyblue;
+}
+
+.room-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.room-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ルーム詳細ページ用 */
+.room-detail-main {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+.room-detail-image {
+  width: 50%;
+}
+
+.room-detail-info {
+  width: 50%;
+  background-color: #d6ad6b;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+
+.reservation-form {
+  width: 100%;
+}
+
+.reservation-inputs {
+  display: flex;
+  gap: 15px;
+}
+
+.login-area {
+  width: 100%;
+  margin-top: 20px;
+}
+
+
+
+/*  ログイン後名前クリックしたときに出るもの */
+.user-menu {
+  position: relative;
+}
+
+.user-menu-box {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+  background: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.user-menu-box a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.user-menu-box p {
+  margin: 0;
+  padding: 10px;
+}
+
+.cancel-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: black;
+  background-color: white;
+}
+
+/*  設定ページ */
+.settings-page {
+  display: flex;
+  gap: 50px;
+  margin: 50px;
+}
+
+.settings-menu {
+  width: 150px;
+}
+
+.settings-menu a {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.account-content {
+  width: 500px;
+}
+
+.account-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* アカウント */
+.account-content h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.account-content form > div {
+  margin-bottom: 20px;
+}
+
+.account-content label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.account-content input[type="email"],
+.account-content input[type="password"],
+.account-content input[type="text"],
+.account-content textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.account-content p {
+  margin: 5px 0;
+}
+
+.account-content form > div:last-child {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.account-content textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* アカウント画面footerずれないように */
+main {
+  flex: 1;
+}
+
+.room-new {
+  width: 500px;
+  margin: 50px auto;
+}
+
+.room-new h1 {
+  text-align: center;
+}
+
+.room-new form > div {
+  margin-bottom: 20px;
+}
+
+.room-new label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.room-new input[type="text"],
+.room-new input[type="number"],
+.room-new textarea {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+/*  予約一覧横並びに */
+/* 予約済み一覧 */
+
+.reservation-header,
+.reservation-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 15px;
+  margin: 0 20px;
+}
+
+/* 見出し */
+.reservation-header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 予約データ */
+.reservation-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 画像 */
+.reservation-image {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.reservation-image img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* 施設名 */
+.reservation-name {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+/* 紹介文 */
+.reservation-description {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+/* 合計料金 */
+.reservation-price {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+/* 日付 */
+.reservation-date {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+/* 予約確定日時 */
+.reservation-created {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+/* 3点メニュー */
+.reservation-menu {
+  width: 20px;
+  margin-left: auto;
+  font-size: 24px;
+}
+
+
+/* 登録済み一覧 */
+
+.room-header,
+.room-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 15px;
+  margin: 0 20px;
+}
+
+/* 見出し */
+.room-header {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 登録した施設 */
+.room-item {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 画像 */
+.room-image {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.room-image img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+}
+
+/* 施設名 */
+.room-name {
+  width: 150px;
+  flex-shrink: 0;
+}
+
+/* 紹介文 */
+.room-description {
+  width: 350px;
+  flex-shrink: 0;
+}
+
+/* 料金 */
+.room-price {
+  width: 100px;
+  flex-shrink: 0;
+}
+
+/* 登録日 */
+.room-created {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+
+/* フラシュメッセージ */
+.flash {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background: rgb(104, 175, 179);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}

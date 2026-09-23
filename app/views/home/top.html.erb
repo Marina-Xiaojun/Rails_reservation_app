@@ -1,0 +1,48 @@
+<div class="main-image">
+  <%= image_tag "mainmountain.jpg" %>
+
+ <h1>
+  Potepan Shareで<br>
+  まだ体験したことのない<br>
+  旅をしよう
+ </h1>
+
+<div class="search">
+  <%= form_with url: rooms_path, method: :get, local: true do |form| %>
+    <%= form.text_field :area, placeholder: "エリアを入力してください" %>
+    <%= form.submit "検索" %>
+  <% end %>
+</div>
+</div>
+
+<h2>おすすめのエリア</h2>
+
+<div class="areas">
+  <div class="area">
+  <%= link_to rooms_path(area: "東京") do %>
+    <%= image_tag "tokyo.jpg" %>
+    <p>東京 Tokyo</p>
+  <% end %>
+  </div>
+
+  <div class="area">
+  <%= link_to rooms_path(area: "大阪") do %>
+    <%= image_tag "osaka.jpg" %>
+    <p>大阪 Osaka</p>
+   <% end %>
+  </div>
+
+  <div class="area">
+  <%= link_to rooms_path(area: "京都") do %>
+    <%= image_tag "kyoto.jpg" %>
+    <p>京都 Kyoto</p>
+   <% end %>
+  </div>
+
+  <div class="area">
+  <%= link_to rooms_path(area: "札幌") do %>
+    <%= image_tag "sapporo.jpg" %>
+    <p>札幌 Sapporo</p>
+  </div>
+ <% end %>
+</div>

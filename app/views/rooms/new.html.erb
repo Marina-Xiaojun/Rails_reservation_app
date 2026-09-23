@@ -1,0 +1,41 @@
+<div class="room-new">
+<h1>新規登録</h1>
+
+<%= form_with model: @room do |form| %>
+
+  <div>
+    <%= form.label :name, "施設名" %>
+    <%= form.text_field :name, placeholder: "ルーム名を入力" %>
+  </div>
+
+  <div>
+    <%= form.label :description, "施設詳細" %>
+    <%= form.text_area :description, placeholder: "施設詳細を入力" %>
+  </div>
+
+  <div>
+   <%= form.label :price, "料金" %>
+   <%= form.number_field :price, placeholder: "一日当たりの料金を入力" %>
+  </div>
+
+  <div>
+  <%= form.label :address, "住所" %>
+  <%= form.text_field :address, placeholder: "住所を入力" %>
+  </div>
+
+  <div>
+  <%= form.label :image, "施設画像" %>
+  <%= form.file_field :image %>
+  </div>
+
+  <div>
+   <%= form.submit "保存" %>
+   </div>
+
+  <div>
+   <%= link_to "キャンセル", root_path, class: "cancel-button" %>
+  </div>
+
+<% end %>
+
+</div>

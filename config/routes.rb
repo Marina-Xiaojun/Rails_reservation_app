@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+  get "rooms/index"
+  root "home#top"
+  get "rooms" => "rooms#index"
+  post "rooms" => "rooms#create"
+  get "my_rooms" => "rooms#my_rooms", as: :my_rooms
+  get "rooms/new" => "rooms#new", as: :new_room
+  get "rooms/:id" => "rooms#show", as: :room # 部屋詳細の
+
+  get "account" => "users#account", as: :account # アカウントの
+  get "profile" => "users#profile", as: :profile
+  patch "profile" => "users#profile_update", as: :profile_update
+  get "profile/edit" => "users#profile_edit", as: :profile_edit
+
+
+  patch "account/edit" => "users#account_update", as: :account_update
+
+  get "account/edit" => "users#account_edit", as: :account_edit
+
+  get "my_reservations" => "reservations#my_reservations", as: :my_reservations
+
+
+  post "rooms/:room_id/reservations" => "reservations#create", as: :room_reservations
+
+  get "users/new"
+  devise_for :users, controllers: {
+  registrations: "users/registrations"
+}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

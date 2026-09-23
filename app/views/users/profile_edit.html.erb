@@ -1,0 +1,38 @@
+<div class="settings-page">
+
+  <div class="settings-menu">
+    <h3>設定</h3>
+
+    <%= link_to "アカウント", account_path %>
+    <%= link_to "プロフィール", profile_path %>
+  </div>
+
+  <div class="account-content">
+
+    <h2>プロフィール編集</h2>
+   <%= form_with model: current_user, url: profile_update_path, method: :patch do |form| %>
+
+  <div>
+    <%= form.label :avatar, "アイコン" %>
+    <%= form.file_field :avatar %>
+  </div>
+
+  <div>
+    <%= form.label :name, "名前" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :introduction, "自己紹介" %>
+    <%= form.text_area :introduction %>
+  </div>
+
+  <div>
+    <%= link_to "キャンセル", profile_path %>
+    <%= form.submit "保存" %>
+  </div>
+
+ <% end %>
+</div>
+
+</div>

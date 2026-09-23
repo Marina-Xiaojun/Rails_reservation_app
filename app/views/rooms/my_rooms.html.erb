@@ -1,0 +1,37 @@
+<h1>自分が登録した施設</h1>
+
+<div class="room-header">
+  <div class="room-image">画像</div>
+  <div class="room-name">施設名</div>
+  <div class="room-description">紹介文</div>
+  <div class="room-price">料金</div>
+  <div class="room-created">登録日</div>
+</div>
+
+<% @rooms.each do |room| %>
+
+  <div class="room-item">
+
+    <div class="room-image">
+      <%= image_tag "room_default.png" %>
+    </div>
+
+    <div class="room-name">
+      <%= link_to room.name, room_path(room) %>
+    </div>
+
+    <div class="room-description">
+      <%= room.description %>
+    </div>
+
+    <div class="room-price">
+      ¥<%= room.price %>〜
+    </div>
+
+    <div class="room-created">
+      <%= room.created_at.strftime("%Y/%m/%d") %>
+    </div>
+
+  </div>
+
+<% end %>

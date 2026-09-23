@@ -1,0 +1,69 @@
+<div class="room-detail">
+
+ <%= link_to "←戻る", rooms_path(area: params[:area]) %>
+
+  <div class="room-detail-main">
+      <div class="room-detail-image">
+      <%= image_tag "room_default.png" %>
+    </div>
+
+    <div class="room-detail-info">
+
+      <h2><%= @room.name %></h2>
+
+      <p>¥<%= number_with_delimiter(@room.price) %>〜</p>
+
+      <p><%= @room.address %></p>
+
+      <p>★★★★★</p>
+
+      <p><%= @room.description %></p>
+
+ <div class="reservation-form">
+ <%= form_with model: @reservation, url: room_reservations_path(@room), local: true do |form| %>
+
+<% if @reservation.errors.any? %>
+  <ul>
+    <% @reservation.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+ <div class="reservation-inputs">
+  <div>
+    <%= form.label :start_date, "チェックイン" %>
+    <%= form.date_field :start_date %>
+  </div>
+
+  <div>
+    <%= form.label :end_date, "チェックアウト" %>
+    <%= form.date_field :end_date %>
+  </div>
+
+  <div>
+    <%= form.label :person_num, "人数" %>
+    <%= form.number_field :person_num, placeholder: "0" %>
+  </div>
+
+  </div>
+
+  <div class="login-area">
+
+   <% if user_signed_in? %>
+    <%= form.submit "予約する", class: "login-button" %>
+  <% else %>
+   <%= link_to "ログイン", new_user_session_path, class: "login-button" %>
+  <% end %>
+
+   </div>
+
+  <% end %>
+
+ </div>
+
+ </div>
+
+</div>
+
+</div>

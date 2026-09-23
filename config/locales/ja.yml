@@ -1,0 +1,21 @@
+ja:
+  errors:
+    messages:
+      blank: "を入力してください"
+
+  activerecord:
+    attributes:
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        name: "名前"
+        password_confirmation: "確認用パスワード"
+
+  devise:
+    errors:
+      messages:
+        blank: "を入力してください"
+
+    sessions:
+      user:
+        signed_in: "ログインしました"
