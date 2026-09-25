@@ -10,6 +10,13 @@
   <div class="account-content">
 
     <h2>アカウント編集</h2>
+    <% if @user.errors.any? %>
+   <div>
+    <% @user.errors.full_messages.each do |message| %>
+      <p style="color: red;"><%= message %></p>
+    <% end %>
+   </div>
+ <% end %>
 
     <%= form_with model: current_user, url: account_update_path, method: :patch do |form| %>
 

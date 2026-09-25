@@ -2,6 +2,9 @@ ja:
   errors:
     messages:
       blank: "を入力してください"
+      too_short: "は%{count}文字以上で入力してください"
+      confirmation: "が一致しません"
+      invalid: "が正しくありません"
 
   activerecord:
     attributes:
@@ -10,6 +13,13 @@ ja:
         password: "パスワード"
         name: "名前"
         password_confirmation: "確認用パスワード"
+        current_password: "現在のパスワード"
+
+    errors:
+      messages:
+        too_short: "は%{count}文字以上で入力してください"
+        confirmation: "が一致しません"
+        invalid: "が正しくありません"
 
   devise:
     errors:
@@ -19,3 +29,14 @@ ja:
     sessions:
       user:
         signed_in: "ログインしました"
+        signed_out: "ログアウトしました"
+
+    registrations:
+      user:
+        signed_up: "アカウントを作成しました"
+
+    failure:
+      user:
+        not_found_in_database: "メールアドレスまたはパスワードが正しくありません"
+        invalid: "メールアドレスまたはパスワードが正しくありません"
+        

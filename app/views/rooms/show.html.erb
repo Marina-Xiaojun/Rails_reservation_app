@@ -20,34 +20,39 @@
       <p><%= @room.description %></p>
 
  <div class="reservation-form">
- <%= form_with model: @reservation, url: room_reservations_path(@room), local: true do |form| %>
+ <%= form_with model: @reservation, url: confirm_room_reservation_path(@room), local: true, method: :get do |form| %>
 
-<% if @reservation.errors.any? %>
-  <ul>
-    <% @reservation.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 
  <div class="reservation-inputs">
-  <div>
+
+  <div class="reservation-field">
     <%= form.label :start_date, "チェックイン" %>
     <%= form.date_field :start_date %>
+
+    <% @reservation.errors[:start_date].each do |message| %>
+      <p class="field-error"><%= message %></p>
+    <% end %>
   </div>
 
-  <div>
+  <div class="reservation-field">
     <%= form.label :end_date, "チェックアウト" %>
     <%= form.date_field :end_date %>
+
+    <% @reservation.errors[:end_date].each do |message| %>
+      <p class="field-error"><%= message %></p>
+    <% end %>
   </div>
 
-  <div>
+  <div class="reservation-field">
     <%= form.label :person_num, "人数" %>
     <%= form.number_field :person_num, placeholder: "0" %>
+
+    <% @reservation.errors[:person_num].each do |message| %>
+      <p class="field-error"><%= message %></p>
+    <% end %>
   </div>
 
-  </div>
-
+</div>
   <div class="login-area">
 
    <% if user_signed_in? %>

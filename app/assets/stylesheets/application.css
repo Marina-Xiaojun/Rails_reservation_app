@@ -631,3 +631,32 @@ main {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
+
+
+/*  予約エラー時のメッセージ */
+.reservation-error-box {
+  border: 1px solid red;
+  padding: 12px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: red;
+  text-align: center;
+}
+
+.field-error {
+  color: #ff0000;
+  margin-top: 5px;
+}
+
+
+/* 予約済み一覧 */
+
+.reservation-confirm {
+  width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+

@@ -20,7 +20,10 @@ Rails.application.routes.draw do
   get "my_reservations" => "reservations#my_reservations", as: :my_reservations
 
 
-  post "rooms/:room_id/reservations" => "reservations#create", as: :room_reservations
+  post "rooms/:room_id/reservations" => "reservations#create", as:
+  :room_reservations
+  get "rooms/:room_id/reservations/confirm" => "reservations#confirm", as: :confirm_room_reservation
+
 
   get "users/new"
   devise_for :users, controllers: {
