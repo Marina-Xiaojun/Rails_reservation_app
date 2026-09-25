@@ -1,0 +1,32 @@
+<div class="settings-page">
+
+  <div class="settings-menu">
+    <h3>設定</h3>
+
+    <%= link_to "アカウント", account_path %>
+    <%= link_to "プロフィール", profile_path %>
+  </div>
+
+  <div class="account-content">
+
+    <div class="account-title">
+      <h2>プロフィール</h2>
+      <%= link_to "✍ 編集", profile_edit_path %>
+    </div>
+
+
+    <p>アイコン</p>
+
+    <% if current_user.avatar.attached? %>
+    <%= image_tag current_user.avatar %>
+    <% else %>
+    <%= image_tag "profilesample.png" %>
+    <% end %>
+
+
+    <p>名前：<%= current_user.name %></p>
+    <p>自己紹介：<%= current_user.introduction %></p>
+
+  </div>
+
+</div>

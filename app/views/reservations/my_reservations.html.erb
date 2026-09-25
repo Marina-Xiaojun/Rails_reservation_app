@@ -1,0 +1,56 @@
+<h2>予約済み一覧</h2>
+
+<div class="reservation-header">
+  <div class="reservation-image">画像</div>
+  <div class="reservation-name">施設名</div>
+  <div class="reservation-description">紹介文</div>
+  <div class="reservation-price">合計料金</div>
+  <div class="reservation-date">チェックイン</div>
+  <div class="reservation-date">チェックアウト</div>
+  <div class="reservation-created">予約確定日時</div>
+  <div class="reservation-menu"></div>
+</div>
+
+<% @reservations.each do |reservation| %>
+
+  <div class="reservation-item">
+
+    <div class="reservation-image">
+      <%= image_tag "room_default.png" %>
+    </div>
+
+    <div class="reservation-name">
+      <%= link_to reservation.room.name, room_path(reservation.room) %>
+    </div>
+
+    <div class="reservation-description">
+      <%= reservation.room.description %>
+    </div>
+
+    <div class="reservation-price">
+     ¥<%= number_with_delimiter(
+     reservation.room.price *
+     (reservation.end_date - reservation.start_date).to_i *
+     reservation.person_num
+     ) %>
+    </div>
+
+    <div class="reservation-date">
+      <%= reservation.start_date.strftime("%Y/%m/%d") %>
+    </div>
+
+    <div class="reservation-date">
+      <%= reservation.end_date.strftime("%Y/%m/%d") %>
+    </div>
+
+    <div class="reservation-created">
+      <%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </div>
+
+    <div class="reservation-menu">
+      ⋮
+    </div>
+
+  </div>
+
+<% end %>

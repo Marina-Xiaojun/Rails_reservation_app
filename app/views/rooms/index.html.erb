@@ -1,0 +1,33 @@
+<p><%= @area %></p>
+
+<div class="room-search">
+  <%= form_with url: rooms_path, method: :get, local: true do |form| %>
+    <%= form.text_field :area, placeholder: "エリアを入力してください" %>
+    <%= form.text_field :keyword, placeholder: "キーワードを入力してください" %>
+    <%= form.submit "検索" %>
+  <% end %>
+</div>
+
+<h2><%= @rooms.count %>件が見つかりました。</h2>
+
+<div class="room-list">
+ <% @rooms.each do |room| %>
+  <div class="room-card">
+   <%= image_tag "room_default.png" %>
+
+     <div class="room-info">
+      <p><%= room.name %></p>
+      <p><%= room.address %></p>
+
+      <%# 各ホテルの紹介 seeds.rbと連携 %>
+       <p><%= "★" * (room.rating || 0) %></p>
+
+       <p><%= room.description %></p>
+
+       <p><strong>¥<%= room.price %>〜</strong></p>
+
+      <%= link_to "詳細はこちら", room_path(room, area: params[:area]) %>
+     </div>
+   </div>
+ <% end %>
+</div>
