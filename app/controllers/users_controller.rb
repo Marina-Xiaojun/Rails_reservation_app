@@ -58,5 +58,4 @@ class UsersController < ApplicationController
       :introduction
     )
   end
-
 end
